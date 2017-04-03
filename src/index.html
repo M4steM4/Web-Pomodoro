@@ -7,7 +7,7 @@
     <title>Welcome to Pomodoro</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/mormailze.css">
+    <link rel="stylesheet" href="assets/css/normailze.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="" class="navbar-brand">Logo</a>
+                <a href="" class="navbar-brand">Pomodoro</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -40,20 +40,76 @@
         <h1 id="mainTitle" class="tomatoText">Pomodoro</h1>
         <h2 id="subTitle" class="tomatoText">Make many tomato!</h2>
         <div id="tomato">
-            <div id="clockLine">
-                <div id="time">12:22</div>
+            <div id="clockCircle">
+                <div class="clock clockTop"></div>
+                <div class="clock clockRight"></div>
+                <div class="clock clockBottom"></div>
+                <div class="clock clockLeft"></div>
+                <div id="time">12:34</div>
             </div>
         </div>
-        <button>Start!</button>
+        <div id="meter">||||||||||||</div>
+        <button id="startButton">START!</button>
     </div>
     <div class="rename1 container-fluid">
         <div class="row">
-            <div class="text col-sm-8">
-                <h3 class="sectionTitle">About Pomodoro</h3>
-                <h4 class="sectionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <div class="col-sm-1"></div>
+            <div class="tomatoList col-sm-4">
+                <h3 class="sectionTitle">My Tomato list</h3>
+                <h4 class="sectionSubTitle">cool~</h4>
             </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-signal logo"></span>
+            <div class="col-sm-2"></div>
+            <div class="tomatoStore col-sm-4">
+                <h3 class="sectionTitle">My Tomato Store</h3>
+                <h4 class="sectionSubTitle">Daily Tomatos (<em id="date">4/23</em>)</h4>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
+                <div class="myTomato col-sm-3">
+                    <div class="dailyTomato"></div>
+                </div>
             </div>
         </div>
     </div>
