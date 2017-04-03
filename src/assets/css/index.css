@@ -84,18 +84,16 @@
     background-color: #df3c32;
 }
 .rename1 {
+    margin-top: 10%;
+}
+
+.list {
     margin: 0;
 }
-.tomatoList {
-    border: 5px solid orange;
+.listDate, .listTomato {
+    border: 2px solid orange;
 }
-.tomatoStore {
-    padding: 0;
-    border: 10px solid #331a00;
-    color: rgba(242, 242, 242, 0.9);
-    background-color: #cc8800;
-    text-align: center;
-}
+
 
 .sectionTitle {
     margin-top: 40px;
@@ -107,6 +105,7 @@
     font-size: 15px;
     font-weight: 300;
 }
+
 .myTomato {
     height: 100px;
     padding: 10px;
@@ -132,4 +131,219 @@
 /* df3c32 */
 .margin {
     margin-top: 50px;
+}
+
+
+
+a{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.store {
+    padding: 0;
+    border: 2px solid #5DBA9D;
+    background-color:#FFFFFF;
+    box-sizing: border-box;
+}
+
+.store-reverse {
+    border: 2px solid #e45;
+}
+
+.header-reverse {
+    background-color:#e45;
+}
+
+header {
+    text-align: right;
+    padding: 10px;
+    margin-bottom:10px;
+    background-color:#5DBA9D;
+}
+
+header a {
+    font-size:20px;
+    color:#FFFFFF;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    margin-left:10px;
+    text-align:center;
+    display:inline-block;
+}
+
+header > p {
+    text-align: left;
+}
+.storeTitle {
+    display: inline;
+    margin-bottom: -100px;
+    color: white;
+    font-size: 25px;
+    font-weight: 300;
+    text-align: left;
+}
+header a.hide-list{
+    background-color:#11956c;
+}
+
+.header-reverse a.hide-list {
+    background-color: #cd1830;
+}
+
+
+
+.tomatoStore:after{
+    content:"";
+    clear:both;
+    display:table;
+}
+
+.tomatoStore {
+    padding:10px 0 10px 10px;
+}
+
+.store .box{
+    float:left;
+    width:100px;
+    height:100px;
+    margin:0 9px 9px 0;
+    background-color:#CCCCCC;
+}
+
+.store.list-mode .tomatoStore{
+    padding-right: 10px;
+}
+
+
+
+
+
+
+/*   background: rgb(250,249,247); */
+
+
+
+
+
+.cont_princ_lists {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.cont_princ_lists > ul > li  {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 75px;
+    left: 0;
+    margin-left: -5%;
+    background-color: #F1F1EF;
+    list-style: none;
+    box-shadow: 1px 10px 10px 0px rgba(218, 215, 206,0.8);
+    z-index: 2;
+}
+
+.col_md_1_list {
+    position: relative;
+    float: left;
+    height: 20px;
+    top:50%;
+    margin-top: -10px;
+}
+.col_md_1_list > p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.col_md_2_list {
+    position: relative;
+    float: left;
+    margin-top: 20px;
+}
+.col_md_2_list  > h4 {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.col_md_2_list  > p {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #999;
+}
+
+.col_md_3_list {
+    position: relative;
+    float: left;
+    height: 14px;
+    top:50%;
+    margin-top: -10px;
+}
+
+.col_md_3_list > .cont_text_date {
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+.col_md_3_list > .cont_text_date > p {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.col_md_3_list:hover > .cont_btns_options{
+    opacity: 1;
+
+}
+
+.col_md_3_list > .cont_btns_options{
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: #F1F1EF;
+    width: 100%;
+    height: 47px;
+    top: 0px;
+}
+
+.col_md_3_list > .cont_btns_options > ul > li{
+    position: relative;
+    float: right;
+    width: 100%;
+    list-style-type: none;
+}
+
+.col_md_3_list > .cont_btns_options > ul > li > a {
+    display: block;
+    width: 20px;
+    height: 15px;
+    background-color: #4C75A1;
+    padding: 5px 3px;
+    border-radius: 50%;
+    color: #fff;
+    margin-top: -5px;
+}
+
+.col_md_3_list > .cont_btns_options > ul > li > a > i {
+    font-size: 15px;
+}
+
+.lisk_shopping {
+    margin-left: 150px;
+}
+.list_shopping > .col_md_1_list {
+    border-left: 4px solid #e45;
+    color: #e45;
 }
