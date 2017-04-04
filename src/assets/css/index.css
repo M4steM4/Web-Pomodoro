@@ -40,7 +40,6 @@
     left: calc(50% - 2px);
 }
 
-
 .clockRight {
     width: 10px;
     height: 4px;
@@ -83,17 +82,10 @@
 #startButton:hover {
     background-color: #df3c32;
 }
+
 .rename1 {
     margin-top: 10%;
 }
-
-.list {
-    margin: 0;
-}
-.listDate, .listTomato {
-    border: 2px solid orange;
-}
-
 
 .sectionTitle {
     margin-top: 40px;
@@ -133,16 +125,23 @@
     margin-top: 50px;
 }
 
+.exTitle {
+    margin-bottom: 60px;
+    font-size: 40px;
+    font-weight: 300;
+}
 
-
-a{
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+.pomodoro {
+    color: #df3c32;
+    font-size: 45px;
+    font-weight: 500;
+    word-spacing: 15px;
+    letter-spacing: 4px;
 }
 
 .store {
+    max-height: 500px;
+    overflow-x: scroll;
     padding: 0;
     border: 2px solid #5DBA9D;
     background-color:#FFFFFF;
@@ -158,34 +157,34 @@ a{
 }
 
 header {
-    text-align: right;
+    text-align: left;
     padding: 10px;
     margin-bottom:10px;
     background-color:#5DBA9D;
 }
 
+header > * {
+    display: inline-block;
+}
+
 header a {
+    position: absolute;
     font-size:20px;
     color:#FFFFFF;
     width:40px;
     height:40px;
     line-height:40px;
-    margin-left:10px;
-    text-align:center;
-    display:inline-block;
+    margin: 6px 20px 0 0 ;
+    right: 0;
 }
 
-header > p {
-    text-align: left;
-}
 .storeTitle {
-    display: inline;
-    margin-bottom: -100px;
+    margin: 6px 0 0 20px;
     color: white;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 300;
-    text-align: left;
 }
+
 header a.hide-list{
     background-color:#11956c;
 }
@@ -194,26 +193,34 @@ header a.hide-list{
     background-color: #cd1830;
 }
 
-
-
 .tomatoStore:after{
     content:"";
     clear:both;
     display:table;
 }
 
-.tomatoStore {
-    padding:10px 0 10px 10px;
-}
+
 
 .store .box{
-    float:left;
-    width:100px;
-    height:100px;
-    margin:0 9px 9px 0;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 2%;
+    padding: 0;
+    border-radius: 5%;
     background-color:#CCCCCC;
 }
 
+.box > img {
+    transition: transform 0.5s;
+    width: 100px;
+    height: 100px;
+}
+
+.box > img:hover {
+    transition: transform 0.5s;
+    transform: scale(1.2);
+}
 .store.list-mode .tomatoStore{
     padding-right: 10px;
 }
@@ -233,19 +240,20 @@ header a.hide-list{
     position: relative;
     float: left;
     width: 100%;
+    margin-top: calc(-2% + 1px);
 }
 
 .cont_princ_lists > ul > li  {
     position: relative;
     float: left;
-    width: 100%;
+    width: 108%;
     height: 75px;
-    left: 0;
-    margin-left: -5%;
+    margin-left: -8%;
+    border-bottom: 1px solid #ccc;
     background-color: #F1F1EF;
     list-style: none;
-    box-shadow: 1px 10px 10px 0px rgba(218, 215, 206,0.8);
     z-index: 2;
+    box-sizing: border-box;
 }
 
 .col_md_1_list {
@@ -287,6 +295,7 @@ header a.hide-list{
     height: 14px;
     top:50%;
     margin-top: -10px;
+    padding: 0 10px 0 0 ;
 }
 
 .col_md_3_list > .cont_text_date {
@@ -296,10 +305,14 @@ header a.hide-list{
     font-weight: 700;
 }
 .col_md_3_list > .cont_text_date > p {
-    text-align: right;
+    display: inline-block;
+    text-align: left;
     margin-right: 20px;
 }
-
+.cont_text_date > div > img {
+    width: 20px;
+    height: 20px;
+}
 .col_md_3_list:hover > .cont_btns_options{
     opacity: 1;
 
@@ -346,4 +359,15 @@ header a.hide-list{
 .list_shopping > .col_md_1_list {
     border-left: 4px solid #e45;
     color: #e45;
+}
+
+
+.rename2 {
+    margin-top: 10%;
+    background-color: #eeeeee;
+}
+
+.explanationIcon {
+    color: red;
+    font-size: 150px;
 }
