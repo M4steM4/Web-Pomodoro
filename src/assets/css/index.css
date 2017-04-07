@@ -1,3 +1,4 @@
+/* main page */
 #mainTitle {
     margin-top: -1%;
     color: #df3c32;
@@ -10,6 +11,10 @@
     color: #333333;
     font-size: 25px;
     font-weight: 300;
+}
+
+#myNavbar > ul > li > a:hover {
+    color: #df3c32;
 }
 
 #tomato {
@@ -28,7 +33,7 @@
     border: 2px solid white;
     border-radius: 50%;
 }
-
+/* clock design */
 .clock {
     position: relative;
     background-color: white;
@@ -83,6 +88,10 @@
     background-color: #df3c32;
 }
 
+#meter {
+
+}
+
 #copyright {
     padding: 1% 8% 6% 8%;
     background-color: #3e4b5e;
@@ -95,8 +104,23 @@
     text-align: center;
     letter-spacing: 4px;
 }
-.rename1 {
+
+/* page sub class */
+.jumbotron {
+    margin-top: 50px;
+    background-color: #eeeeee;
+}
+
+.jumbotron > * {
+    color: #df3c32;
+}
+
+.containerSection {
     margin-top: 10%;
+}
+
+.container-gray {
+    background-color: #eeeeee;
 }
 
 .sectionTitle {
@@ -104,39 +128,6 @@
     font-size: 30px;
     font-weight: 400;
 }
-.sectionSubTitle {
-    margin: -10px 0 30px 0;
-    font-size: 15px;
-    font-weight: 300;
-}
-
-.myTomato {
-    height: 100px;
-    padding: 10px;
-    border: 5px solid #331a00;
-    background: white;
-}
-
-.dailyTomato {
-    width: 100%;
-    height: 100%;
-    margin-top: 10px;
-    border: 1px solid red;
-    border-color: #df3c32;
-    border-radius: 50%;
-}
-.jumbotron {
-    background-color: #eeeeee;
-}
-
-.jumbotron > * {
-    color: #df3c32;
-}
-/* df3c32 */
-.margin {
-    margin-top: 50px;
-}
-
 
 .exTitle {
     margin: 100px 0 100px 20px;
@@ -150,7 +141,7 @@
     margin: 0px 20px 10px 30px;
 }
 
-.pomodoro {
+#pomodoro {
     color: #df3c32;
     font-size: 45px;
     font-weight: 500;
@@ -158,27 +149,6 @@
     letter-spacing: 2px;
 }
 
-.explanationSection {
-    height: 150px;
-    color: #333;
-    margin-bottom: 50px;
-}
-
-.explanationTitle {
-    margin: 20px 0 30px 0;
-    font-size: 27px;
-    font-weight: 200;
-    word-spacing: 10px;
-}
-
-.explanationTitle + p {
-    font-size: 17px;
-    color: #555;
-}
-
-.explanationSection:last-child {
-    margin-bottom: 100px;
-}
 .store {
     max-height: 500px;
     overflow-x: scroll;
@@ -190,6 +160,13 @@
 
 .store-reverse {
     border: 2px solid #e45;
+}
+
+.storeTitle {
+    margin: 6px 0 0 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
 }
 
 .header-reverse {
@@ -209,37 +186,28 @@ header > * {
 
 header a {
     position: absolute;
-    font-size:20px;
-    color:#FFFFFF;
+    right: 0;
     width:40px;
     height:40px;
-    line-height:40px;
     margin: 6px 20px 0 0 ;
-    right: 0;
+    color:#FFFFFF;
+    font-size:20px;
+    line-height:40px;
 }
 
-.storeTitle {
-    margin: 6px 0 0 20px;
-    color: white;
-    font-size: 30px;
-    font-weight: 300;
-}
-
-header a.hide-list{
+header a.storeButton{
     background-color:#11956c;
 }
 
-.header-reverse a.hide-list {
+.header-reverse a.storeButton {
     background-color: #cd1830;
 }
 
-.tomatoStore:after{
+#tomatoStore:after{
     content:"";
     clear:both;
     display:table;
 }
-
-
 
 .store .box{
     float: left;
@@ -261,29 +229,18 @@ header a.hide-list{
     transition: transform 0.5s;
     transform: scale(1.2);
 }
-.store.list-mode .tomatoStore{
-    padding-right: 10px;
-}
-
-
-
-
-
-
 /*   background: rgb(250,249,247); */
-
-
-
-
-
-.cont_princ_lists {
+/* tomato box */
+.tomatoBox {
     position: relative;
     float: left;
     width: 100%;
     margin-top: calc(-2% + 1px);
 }
 
-.cont_princ_lists > ul > li  {
+.tomatoBox > ul > li  {
+    z-index: 2;
+    list-style: none;
     position: relative;
     float: left;
     width: 108%;
@@ -291,37 +248,37 @@ header a.hide-list{
     margin-left: -8%;
     border-bottom: 1px solid #ccc;
     background-color: #F1F1EF;
-    list-style: none;
-    z-index: 2;
     box-sizing: border-box;
 }
 
-.col_md_1_list {
+.tomatoBoxDate {
     position: relative;
     float: left;
     height: 20px;
     top:50%;
     margin-top: -10px;
 }
-.col_md_1_list > p {
+
+.tomatoBoxDate > p {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 700;
 }
 
-.col_md_2_list {
+.tomatoBoxComment {
     position: relative;
     float: left;
     margin-top: 20px;
 }
-.col_md_2_list  > h4 {
+
+.tomatoBoxComment  > h4 {
     text-align: left;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 700;
 }
 
-.col_md_2_list  > p {
+.tomatoBoxComment  > p {
     text-align: left;
     font-family: 'Open Sans', sans-serif;
     font-size: 10px;
@@ -329,7 +286,7 @@ header a.hide-list{
     color: #999;
 }
 
-.col_md_3_list {
+.tomato {
     position: relative;
     float: left;
     height: 14px;
@@ -338,80 +295,56 @@ header a.hide-list{
     padding: 0 10px 0 0 ;
 }
 
-.col_md_3_list > .cont_text_date {
+.tomato > .tomatoCase {
     text-align: right;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 700;
 }
-.col_md_3_list > .cont_text_date > p {
+
+.tomato > .tomatoCase > p {
     display: inline-block;
     text-align: left;
     margin-right: 20px;
 }
-.cont_text_date > div > img {
+
+.tomatoCase > img {
     width: 20px;
     height: 20px;
 }
-.col_md_3_list:hover > .cont_btns_options{
-    opacity: 1;
 
-}
-
-.col_md_3_list > .cont_btns_options{
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    background-color: #F1F1EF;
-    width: 100%;
-    height: 47px;
-    top: 0px;
-}
-
-.col_md_3_list > .cont_btns_options > ul > li{
-    position: relative;
-    float: right;
-    width: 100%;
-    list-style-type: none;
-}
-
-.col_md_3_list > .cont_btns_options > ul > li > a {
-    display: block;
-    width: 20px;
-    height: 15px;
-    background-color: #4C75A1;
-    padding: 5px 3px;
-    border-radius: 50%;
-    color: #fff;
-    margin-top: -5px;
-}
-
-.col_md_3_list > .cont_btns_options > ul > li > a > i {
-    font-size: 15px;
-}
-
-.lisk_shopping {
-    margin-left: 150px;
-}
-.list_shopping > .col_md_1_list {
+.tomatoList > .tomatoBoxDate {
     border-left: 4px solid #e45;
     color: #e45;
 }
-
-
-.rename2 {
-    margin-top: 10%;
-    background-color: #eeeeee;
+/* How can use pomodoro */
+.explanationSection {
+    height: 150px;
+    color: #333;
+    margin-bottom: 50px;
 }
 
+.explanationSection:last-child {
+    margin-bottom: 100px;
+}
 
 .explanationSection > * > i {
     color: #df3c32;
     font-size: 150px;
 }
+
+.explanationTitle {
+    margin: 20px 0 30px 0;
+    font-size: 27px;
+    font-weight: 200;
+    word-spacing: 10px;
+}
+
+.explanationTitle + p {
+    font-size: 17px;
+    color: #555;
+}
+/* Contact */
 .contactBox {
     display: flex;
     text-align: center;
@@ -432,6 +365,7 @@ header a.hide-list{
     opacity: 0.9;
     transition: transform 0.3s;
 }
+
 .contact > i {
     margin-top: 20px;
     font-size: 50px;
