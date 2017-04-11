@@ -366,7 +366,8 @@ header a.storeButton{
     transition: transform 0.3s;
 }
 
-.contact > i {
+.contact > .fa {
     margin-top: 20px;
     font-size: 50px;
+    color: white;
 }
