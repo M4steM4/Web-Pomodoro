@@ -1,40 +1,42 @@
 $(document).ready(function() {
-    var kippingTime;
-    function timer(kippingTime, min, sec) {
-        var min1, sec1, time;
+    var stopCheck = true;
+    var mainTime = [0, 15];
+
+    function timer(setTime) {
         var element = document.getElementById("time");
-        var finishTime = (+new Date) + 1000 * (60 * min + sec) + 500;
+        var button = document.getElementById("startButton");
+        var finishTime = (+new Date) + 1000 * (60 * setTime[0] + setTime[1]) + 200;
+        if(stopCheck === true) {
+            button.innerHTML = "STOP!";
+            stopCheck = !stopCheck;
+        } else {
+            button.innerHTML = "START!";
+            stopCheck = !stopCheck;
+        }
 
         function addZero(n) {
             return (n <= 9 ? "0" + n : n);
         }
 
-        function startTimer(kippingTime) {
+        function startTimer() {
+            var min, sec, time;
             nowTime = finishTime - (+new Date);
             if(nowTime < 1000) {
                 element.innerHTML = "OVER!";
+            } else if(stopCheck === true) {
             } else {
                 time = new Date(nowTime);
-                min1 = time.getUTCMinutes();
-                sec1 = time.getUTCSeconds();
-                kippingTime = [min1, sec1];
-                console.log(kippingTime);
-                element.innerHTML = addZero(min1) + ':' + addZero(sec1);
-                setTimeout(startTimer, time.getUTCMilliseconds() + 500);
+                min = time.getUTCMinutes();
+                sec = time.getUTCSeconds();
+                mainTime = [min, sec];
+                element.innerHTML = addZero(min) + ':' + addZero(sec);
+                setTimeout(startTimer, time.getUTCMilliseconds() + 200);
             }
         }
-
         startTimer();
     }
-    /*
-    $("#startButton").click(function() {
-        if(timerStop == 1) {
-            countdown("time", 0, 5);
-            timerStop = 0;
-        } else {
 
-        }
+    $("#startButton").click(function() {
+        timer(mainTime);
     });
-    */
-    timer(kippingTime, 0, 5);
 });
