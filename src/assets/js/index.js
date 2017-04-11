@@ -1,6 +1,8 @@
 $(document).ready(function() {
     var stopCheck = true;
-    var mainTime = [0, 15];
+    var mainTime = [0, 20];
+    var mainProgress = 60 * mainTime[0] + mainTime[1];
+    var setProgress, ratio;
 
     function timer(setTime) {
         var element = document.getElementById("time");
@@ -23,12 +25,17 @@ $(document).ready(function() {
             nowTime = finishTime - (+new Date);
             if(nowTime < 1000) {
                 element.innerHTML = "OVER!";
+                alert("Pomodoro time over!");
             } else if(stopCheck === true) {
             } else {
                 time = new Date(nowTime);
                 min = time.getUTCMinutes();
                 sec = time.getUTCSeconds();
                 mainTime = [min, sec];
+                setProgress = (60 * mainTime[0] + mainTime[1]);
+                ratio = parseInt(100 * ((mainProgress - setProgress)/mainProgress));
+                $("#meter").css("width", ratio + "%");
+                $("#meter").text(ratio + "%");
                 element.innerHTML = addZero(min) + ':' + addZero(sec);
                 setTimeout(startTimer, time.getUTCMilliseconds() + 200);
             }
