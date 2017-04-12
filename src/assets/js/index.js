@@ -1,32 +1,49 @@
 $(document).ready(function() {
-    var stopCheck = true;
-    var mainTime = [0, 20];
+    var timerHandle = true;
+    var changeTime = true;
+    var mainTime = [0, 25];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
-    var setProgress, ratio;
 
     function timer(setTime) {
+        var setProgress, ratio;
         var element = document.getElementById("time");
         var button = document.getElementById("startButton");
         var finishTime = (+new Date) + 1000 * (60 * setTime[0] + setTime[1]) + 200;
-        if(stopCheck === true) {
+
+        if(timerHandle === true) {
             button.innerHTML = "STOP!";
-            stopCheck = !stopCheck;
+            timerHandle = !timerHandle;
         } else {
             button.innerHTML = "START!";
-            stopCheck = !stopCheck;
+            timerHandle = !timerHandle;
         }
 
         function addZero(n) {
             return (n <= 9 ? "0" + n : n);
         }
 
+        function changeMode() {
+            changeTime = !changeTime;
+            timerHandle = !timerHandle;
+            mainTime = changeTime ? [0, 25] : [0, 5];
+            mainProgress = 60 * mainTime[0] + mainTime[1];
+        }
+
         function startTimer() {
             var min, sec, time;
             nowTime = finishTime - (+new Date);
             if(nowTime < 1000) {
+                $("#meter").text("100%");
+                $("#meter").css("width", "100%");
                 element.innerHTML = "OVER!";
-                alert("Pomodoro time over!");
-            } else if(stopCheck === true) {
+                button.innerHTML = "START!";
+                var check = confirm("Pomodoro time over! \ㅜn Take a breaktime");
+
+                if(check === true) {
+                    changeMode();
+                }
+
+            } else if(timerHandle === true) {
             } else {
                 time = new Date(nowTime);
                 min = time.getUTCMinutes();

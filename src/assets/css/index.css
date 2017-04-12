@@ -7,7 +7,7 @@
 }
 
 #subTitle {
-    margin: -60px 0 50px 0;
+    margin: -60px 0 30px 0;
     color: #333333;
     font-size: 25px;
     font-weight: 300;
@@ -75,7 +75,7 @@
 #startButton {
     width: 300px;
     height: 60px;
-    margin-top: 3%;
+    margin-top: 1%;
     border: 0px solid transparent;
     background-color: #f64736;
     color: white;
@@ -88,8 +88,23 @@
     background-color: #df3c32;
 }
 
-#meter {
 
+.progress {
+    height: 30px;
+    margin-top: 4%;
+  padding: 4px 4px 18px 4px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 22px;
+  border-radius: 4px;
+  background-color: #86e01e;
+  transition: 1s linear;
+  transition-property: width, background-color;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 #copyright {
