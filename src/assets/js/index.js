@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var timerHandle = true;
     var changeTime = true;
-    var mainTime = [0, 25];
+    var mainTime = [0, 1];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
 
     function timer(setTime) {
@@ -26,6 +26,9 @@ $(document).ready(function() {
             changeTime = !changeTime;
             timerHandle = !timerHandle;
             mainTime = changeTime ? [0, 25] : [0, 5];
+            $("#tomato").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
+            $("#startButton").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
+            $("#mainTitle").css("color", changeTime ? "#df3c32" : "#3e4b5e");
             mainProgress = 60 * mainTime[0] + mainTime[1];
         }
 
@@ -37,10 +40,12 @@ $(document).ready(function() {
                 $("#meter").css("width", "100%");
                 element.innerHTML = "OVER!";
                 button.innerHTML = "START!";
-                var check = confirm("Pomodoro time over! \ㅜn Take a breaktime");
+                var check = confirm("Pomodoro time over! \n Take a breaktime");
 
                 if(check === true) {
                     changeMode();
+                } else {
+                    check = confirm("Pomodoro time over! \n Take a breaktime");
                 }
 
             } else if(timerHandle === true) {
