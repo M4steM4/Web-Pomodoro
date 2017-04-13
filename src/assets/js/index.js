@@ -2,22 +2,33 @@ $(document).ready(function() {
     var timerHandle = true;
     var changeTime = true;
     var mainTime = [0, 1];
-    var tomatoCount = 1;
     var mainProgress = 60 * mainTime[0] + mainTime[1];
+    var tomatoBoxDate = $(".tomatoBoxDate");
+    var now = new Date();
+
+    function localReset() {
+        localStorage.count = 1;
+        localStorage.date = [];
+    }
 
     function loadTomato() {
-        for(var i = tomatoCount; i < localStorage.count; i++) {
-            $("#case" + i).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="Hooray!">');
+        for(var i = 1; i < localStorage.count; i++) {
+            $("#case" + i).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="' + localStorage.getItem(i) + '">');
+        }
+        for(var j = 0; j < 10; j++) {
+            $(tomatoBoxDate[j]).html("<p>" + Number(now.getMonth() + 1) + "/" + Number(now.getDate() + j) + "</p>");
         }
     }
-    loadTomato();
 
     function makeTomato() {
         if(typeof(Storage) !== "undefined") {
-            $("#case" + localStorage.count).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="Hooray!">');
+            var now = new Date();
+            var date = (now.getMonth() + 1) + "/" + now.getDate() + "\n" + now.getHours() + " : " + now.getMinutes() + " : " + now.getSeconds();
+            $("#case" + localStorage.count).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="">');
+            localStorage.setItem(localStorage.count, date);
             localStorage.count = Number(localStorage.count) + 1;
         } else {
-            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            console.log("Browser does not support web storage...");
         }
     }
 
@@ -56,19 +67,15 @@ $(document).ready(function() {
             var min, sec, time;
             nowTime = finishTime - (+new Date);
             if(nowTime < 1000) {
+                var message = changeTime ? "Pomodoro time over! \nTake a break time" : "Break time over! \nDo your work!";
+                var check = alert(message);
                 $("#meter").text("100%");
                 $("#meter").css("width", "100%");
                 element.innerHTML = "OVER!";
                 button.innerHTML = "START!";
-                var check = confirm("Pomodoro time over! \n Take a breaktime");
-
-                if(check === true) {
-                    changeMode();
-                } else {
-                    check = confirm("Pomodoro time over! \n Take a breaktime");
-                }
-
+                changeMode();
             } else if(timerHandle === true) {
+                console.log("Click event exception");
             } else {
                 time = new Date(nowTime);
                 min = time.getUTCMinutes();
@@ -84,6 +91,8 @@ $(document).ready(function() {
         }
         startTimer();
     }
+
+    loadTomato();
 
     $("#startButton").click(function() {
         timer(mainTime);
