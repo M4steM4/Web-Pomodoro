@@ -2,7 +2,24 @@ $(document).ready(function() {
     var timerHandle = true;
     var changeTime = true;
     var mainTime = [0, 1];
+    var tomatoCount = 1;
     var mainProgress = 60 * mainTime[0] + mainTime[1];
+
+    function loadTomato() {
+        for(var i = tomatoCount; i < localStorage.count; i++) {
+            $("#case" + i).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="Hooray!">');
+        }
+    }
+    loadTomato();
+
+    function makeTomato() {
+        if(typeof(Storage) !== "undefined") {
+            $("#case" + localStorage.count).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="Hooray!">');
+            localStorage.count = Number(localStorage.count) + 1;
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
 
     function timer(setTime) {
         var setProgress, ratio;
@@ -23,9 +40,12 @@ $(document).ready(function() {
         }
 
         function changeMode() {
+            if(changeTime === true) {
+                makeTomato();
+            }
             changeTime = !changeTime;
             timerHandle = !timerHandle;
-            mainTime = changeTime ? [0, 25] : [0, 5];
+            mainTime = changeTime ? [0, 2] : [0, 5];
             $("#tomato").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
             $("#startButton").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
             $("#mainTitle").css("color", changeTime ? "#df3c32" : "#3e4b5e");
