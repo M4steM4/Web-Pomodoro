@@ -92,19 +92,19 @@
 .progress {
     height: 30px;
     margin-top: 4%;
-  padding: 4px 4px 18px 4px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px rgba(255, 255, 255, 0.08);
+    padding: 4px 4px 18px 4px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .progress-bar {
-  height: 22px;
-  border-radius: 4px;
-  background-color: #86e01e;
-  transition: 1s linear;
-  transition-property: width, background-color;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+    height: 22px;
+    border-radius: 4px;
+    background-color: #86e01e;
+    transition: 1s linear;
+    transition-property: width, background-color;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 #copyright {
@@ -119,7 +119,6 @@
     text-align: center;
     letter-spacing: 4px;
 }
-
 /* page sub class */
 .jumbotron {
     margin-top: 50px;
@@ -244,7 +243,6 @@ header a.storeButton{
     transition: transform 0.5s;
     transform: scale(1.2);
 }
-/*   background: rgb(250,249,247); */
 /* tomato box */
 .tomatoBox {
     position: relative;

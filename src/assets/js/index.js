@@ -1,11 +1,11 @@
 $(document).ready(function() {
     var timerHandle = true;
     var changeTime = true;
-    var mainTime = [0, 1];
+    var mainTime = [0, 25];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
     var tomatoBoxDate = $(".tomatoBoxDate");
     var now = new Date();
-
+    
     function localReset() {
         localStorage.count = 1;
         localStorage.date = [];
@@ -34,15 +34,16 @@ $(document).ready(function() {
 
     function timer(setTime) {
         var setProgress, ratio;
-        var element = document.getElementById("time");
-        var button = document.getElementById("startButton");
+        var element = $("#time");
+        var button = $("#startButton");
+        var meter = $("#meter");
         var finishTime = (+new Date) + 1000 * (60 * setTime[0] + setTime[1]) + 200;
 
         if(timerHandle === true) {
-            button.innerHTML = "STOP!";
+            button.text("STOP!");
             timerHandle = !timerHandle;
         } else {
-            button.innerHTML = "START!";
+            button.text("START!");
             timerHandle = !timerHandle;
         }
 
@@ -56,10 +57,10 @@ $(document).ready(function() {
             }
             changeTime = !changeTime;
             timerHandle = !timerHandle;
-            mainTime = changeTime ? [0, 2] : [0, 5];
+            mainTime = changeTime ? [0, 25] : [0, 5];
             $("#tomato").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
-            $("#startButton").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
             $("#mainTitle").css("color", changeTime ? "#df3c32" : "#3e4b5e");
+            button.css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
             mainProgress = 60 * mainTime[0] + mainTime[1];
         }
 
@@ -69,10 +70,10 @@ $(document).ready(function() {
             if(nowTime < 1000) {
                 var message = changeTime ? "Pomodoro time over! \nTake a break time" : "Break time over! \nDo your work!";
                 var check = alert(message);
-                $("#meter").text("100%");
-                $("#meter").css("width", "100%");
-                element.innerHTML = "OVER!";
-                button.innerHTML = "START!";
+                meter.text("100%");
+                meter.css("width", "100%");
+                element.text("OVER!");
+                button.text("START!");
                 changeMode();
             } else if(timerHandle === true) {
                 console.log("Click event exception");
@@ -82,16 +83,15 @@ $(document).ready(function() {
                 sec = time.getUTCSeconds();
                 mainTime = [min, sec];
                 setProgress = (60 * mainTime[0] + mainTime[1]);
-                ratio = parseInt(100 * ((mainProgress - setProgress)/mainProgress));
-                $("#meter").css("width", ratio + "%");
-                $("#meter").text(ratio + "%");
-                element.innerHTML = addZero(min) + ':' + addZero(sec);
+                ratio = parseInt(100 * ((mainProgress - setProgress) / mainProgress));
+                meter.css("width", ratio + "%");
+                meter.text(ratio + "%");
+                element.text(addZero(min) + ':' + addZero(sec));
                 setTimeout(startTimer, time.getUTCMilliseconds() + 200);
             }
         }
         startTimer();
     }
-
     loadTomato();
 
     $("#startButton").click(function() {
