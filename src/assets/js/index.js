@@ -1,11 +1,13 @@
 $(document).ready(function() {
     var timerHandle = true;
     var changeTime = true;
-    var mainTime = [0, 25];
+    var mainTime = [25, 0];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
     var tomatoBoxDate = $(".tomatoBoxDate");
     var now = new Date();
-    
+
+    localReset();
+
     function localReset() {
         localStorage.count = 1;
         localStorage.date = [];
@@ -57,7 +59,7 @@ $(document).ready(function() {
             }
             changeTime = !changeTime;
             timerHandle = !timerHandle;
-            mainTime = changeTime ? [0, 25] : [0, 5];
+            mainTime = changeTime ? [25, 0] : [5, 0];
             $("#tomato").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
             $("#mainTitle").css("color", changeTime ? "#df3c32" : "#3e4b5e");
             button.css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
