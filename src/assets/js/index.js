@@ -6,17 +6,17 @@ $(document).ready(function() {
     var tomatoBoxDate = $(".tomatoBoxDate");
     var now = new Date();
 
-    localReset();
-
     function localReset() {
         localStorage.count = 1;
         localStorage.date = [];
     }
 
     function loadTomato() {
+        // todo: save daily tomato 
         for(var i = 1; i < localStorage.count; i++) {
             $("#case" + i).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="' + localStorage.getItem(i) + '">');
         }
+
         for(var j = 0; j < 10; j++) {
             $(tomatoBoxDate[j]).html("<p>" + Number(now.getMonth() + 1) + "/" + Number(now.getDate() + j) + "</p>");
         }
