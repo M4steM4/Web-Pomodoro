@@ -1,18 +1,25 @@
+if(module.hot){
+  module.hot.accept()
+}
+
+import '../css/index.css'
+
 $(document).ready(function() {
     var timerHandle = true;
     var changeTime = true;
-    var mainTime = [25, 0];
+    var mainTime = [0, 10];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
     var tomatoBoxDate = $(".tomatoBoxDate");
     var now = new Date();
 
     function localReset() {
+        console.log("T");
         localStorage.count = 1;
         localStorage.date = [];
     }
 
     function loadTomato() {
-        // todo: save daily tomato 
+        // todo: save daily tomato
         for(var i = 1; i < localStorage.count; i++) {
             $("#case" + i).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="' + localStorage.getItem(i) + '">');
         }
@@ -68,7 +75,7 @@ $(document).ready(function() {
 
         function startTimer() {
             var min, sec, time;
-            nowTime = finishTime - (+new Date);
+            var nowTime = finishTime - (+new Date);
             if(nowTime < 1000) {
                 var message = changeTime ? "Pomodoro time over! \nTake a break time" : "Break time over! \nDo your work!";
                 var check = alert(message);
