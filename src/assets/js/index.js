@@ -1,37 +1,64 @@
-if(module.hot){
-  module.hot.accept()
-}
-
-import '../css/index.css'
+// if(module.hot){
+//   module.hot.accept()
+// }
 
 $(document).ready(function() {
     var timerHandle = true;
     var changeTime = true;
-    var mainTime = [0, 10];
+    var mainTime = [0, 1];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
     var tomatoBoxDate = $(".tomatoBoxDate");
+    var tomatoCase = $(".tomatoCase");
     var now = new Date();
+    var name = 'tomato';
+    var list = [];
 
     function localReset() {
-        console.log("T");
         localStorage.count = 1;
-        localStorage.date = [];
     }
 
+    function virTomato() {
+        var today = now.getDate();
+        for(var i = 0; i < 10; i ++) {
+            list.push(today + i + 't');
+            localStorage.setItem(list[i], 2 + i);
+            console.log(list[i]);
+        }
+    }
+    virTomato();
+
+    // function createDate() {
+    //     var today;
+    //     today = now.getDate();
+    //
+    //     for(var i = 0; i < 10; i ++) {
+    //         list.push(today + i + 't');
+    //         localStorage.setItem(list[i], i);
+    //         console.log(list[i]);
+    //     }
+    // }
+    // createDate();
+
     function loadTomato() {
-        // todo: save daily tomato
+        // TODO: save daily tomato
         for(var i = 1; i < localStorage.count; i++) {
             $("#case" + i).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="' + localStorage.getItem(i) + '">');
         }
 
         for(var j = 0; j < 10; j++) {
             $(tomatoBoxDate[j]).html("<p>" + Number(now.getMonth() + 1) + "/" + Number(now.getDate() + j) + "</p>");
+            $(tomatoCase[j]).html( () => {
+                var string = '<img src="assets/images/tomato.png" alt="">';
+                var count = Number(localStorage.getItem(list[j]));
+                return string.repeat(count);
+            });
         }
     }
 
     function makeTomato() {
         if(typeof(Storage) !== "undefined") {
             var now = new Date();
+            console.log("est");
             var date = (now.getMonth() + 1) + "/" + now.getDate() + "\n" + now.getHours() + " : " + now.getMinutes() + " : " + now.getSeconds();
             $("#case" + localStorage.count).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="">');
             localStorage.setItem(localStorage.count, date);
@@ -66,7 +93,7 @@ $(document).ready(function() {
             }
             changeTime = !changeTime;
             timerHandle = !timerHandle;
-            mainTime = changeTime ? [25, 0] : [5, 0];
+            mainTime = changeTime ? [0, 1] : [0, 1];
             $("#tomato").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
             $("#mainTitle").css("color", changeTime ? "#df3c32" : "#3e4b5e");
             button.css("background-color", changeTime ? "#df3c32" : "#3e4b5e");

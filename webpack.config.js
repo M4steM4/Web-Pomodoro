@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
-
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const extractCommons = new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',
     filename: 'common.js'
@@ -28,24 +28,29 @@ const config = {
                 }
             }]
         }, {
-            test: /\.png$/,
-            use: [{
-                loader: 'url-loader',
-                options: { limit: 8192 } // 10k 이하 이미지는 base64 문자열로 변환
-            }]
-        }, {
-            test: /\.scss$/,
-            loader: ['style-loader', 'css-loader','sass-loader']
-        }],
-        plugins: [
-            new webpack.LoaderOptionsPlugin({
-            options: {
-                extractCSS,
-                extractCommons
-              }
-            })
-        ]
-    }
+            test: '/\.scss$/',
+            exclude: /node_modules/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'sass-loader',
+                'es2015'
+            ]
+        }]
+    },
+    plugins :[
+        new UglifyJSPlugin({
+            beautify: false,
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            compress: {
+                screw_ie8: true
+            },
+            comments: false
+        })
+    ]
 }
 
 module.exports = config
