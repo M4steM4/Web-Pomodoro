@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="m4stem4 pomodoro"/>
+    <meta name"description" content="create by m4stem4" />
+    <meta name"author" content="m4stem4" />
     <title>Pomodoro</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/normailze.css">
+    <link rel="stylesheet" href="assets/css/base.css">
     <link href="assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/ead388ed10.js"></script>
-    <script src="assets/js/index.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
@@ -36,13 +33,14 @@
                     <li><a href="#status">STATUS</a></li>
                     <li><a href="#guide">GUIDE</a></li>
                     <li><a href="#copyright">COPYRIGHT</a></li>
+                    <li><a href="#option"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="jumbotron text-center">
-        <h1 id="mainTitle" class="tomatoText">Pomodoro</h1>
-        <h2 id="subTitle" class="tomatoText">Make many tomato!</h2>
+        <h1 id="mainTitle">Pomodoro</h1>
+        <h2 id="subTitle">Make many tomato!</h2>
         <div id="tomato">
             <div id="clockCircle">
                 <div class="clock clockTop"></div>
@@ -62,23 +60,23 @@
             </div>
             <div class="col-sm-3"></div>
         </div>
-        <button id="startButton">START!</button>
+        <button id="start">START!</button>
     </div>
-    <div id="status" class="containerSection container-fluid">
+    <div id="status" class="container-fluid">
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="store store-reverse col-sm-5">
                 <header class="header-reverse">
-                    <p class="storeTitle">Daily Tomatos</p>
-                    <a href="javascript:void(0);" class="storeButton"></a>
+                    <p class="title">Daily Tomatos</p>
+                    <a href="javascript:void(0);" class="button"></a>
                 </header>
                 <div class="tomatoBox">
                     <ul>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -87,10 +85,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -99,10 +97,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -111,10 +109,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -123,10 +121,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -135,10 +133,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -147,10 +145,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -159,10 +157,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -171,10 +169,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -183,10 +181,10 @@
                             </div>
                         </li>
                         <li class="tomatoList">
-                            <div class="tomatoBoxDate col-sm-3">
+                            <div class="date col-sm-3">
                                 <p></p>
                             </div>
-                            <div class="tomatoBoxComment col-sm-6">
+                            <div class="comment col-sm-6">
                                 <h4>Make more tomato</h4>
                                 <p>DON'T GIVE!</p>
                             </div>
@@ -199,8 +197,8 @@
             </div>
             <div class="store col-sm-5">
                 <header>
-                    <p class="storeTitle">Today my tomato</p>
-                    <a href="javascript:void(0)" class="storeButton"></a>
+                    <p class="title">Today my tomato</p>
+                    <a href="javascript:void(0)" class="button"></a>
                 </header>
                 <div id="tomatoStore">
                     <div id="case1" class="box"></div>
@@ -219,69 +217,69 @@
             </div>
         </div>
     </div>
-    <div id="guide" class="containerSection container-gray container-fluid">
+    <div id="guide" class="container-gray container-fluid">
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
-                <h3 class="sectionTitle exTitle"><img src="assets/images/tomato.png" alt="">How can use<strong id="pomodoro"> Pomodoro</strong>?</h3>
-                <div class="explanationSection">
+                <h3 class="guideTitle"><img src="assets/images/tomato.png" alt="">How can use<strong id="pomodoro"> Pomodoro</strong>?</h3>
+                <div class="explanation">
                     <div class="col-sm-2">
-                        <i class="explanationIcon fa fa-file-text-o" aria-hidden="true"></i>
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
                     </div>
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-9 explanation">
-                        <h5 class="explanationTitle">1. CHOOSE A TASK YOU'D LIKE TO GET DOME:</h5>
-                        <p>Something big, something small, something you've been putting off for a million years: it doesn't matter What matters is that it's something that deserves your full, undivided attention.</p>
+                    <div class="col-sm-9">
+                        <h5 class="title">1. CHOOSE A TASK YOU'D LIKE TO GET DOME:</h5>
+                        <p class="content">Something big, something small, something you've been putting off for a million years: it doesn't matter What matters is that it's something that deserves your full, undivided attention.</p>
                     </div>
                 </div>
-                <div class="explanationSection">
+                <div class="explanation">
                     <div class="col-sm-2">
                         <i class="fa fa-clock-o" aria-hidden="true"></i>
                     </div>
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-9 explanation">
-                        <h5 class="explanationTitle">2. SET THE POMODORO FOR 25 MINUTES:</h5>
-                        <p>Make a small oath to yourself: I will spend 25 minutes on this task and I will not interrupt myself. You can do it! After all, it's just 25 minutes.</p>
+                    <div class="col-sm-9">
+                        <h5 class="title">2. SET THE POMODORO FOR 25 MINUTES:</h5>
+                        <p class="content">Make a small oath to yourself: I will spend 25 minutes on this task and I will not interrupt myself. You can do it! After all, it's just 25 minutes.</p>
                     </div>
                 </div>
-                <div class="explanationSection">
+                <div class="explanation">
                     <div class="col-sm-2">
                         <i class="fa fa-bell-o" aria-hidden="true"></i>
                     </div>
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-9 explanation">
-                        <h5 class="explanationTitle">3. WORK ON THE TAST UNTIL THE POMODORO RINGS</h5>
-                        <p>Immerse yourself in the task for the next 25 minutes. If you suddenly realize you have something else you need to do, write the task down on a sheet of paper.</p>
+                    <div class="col-sm-9">
+                        <h5 class="title">3. WORK ON THE TAST UNTIL THE POMODORO RINGS</h5>
+                        <p class="content">Immerse yourself in the task for the next 25 minutes. If you suddenly realize you have something else you need to do, write the task down on a sheet of paper.</p>
                     </div>
                 </div>
-                <div class="explanationSection">
+                <div class="explanation">
                     <div class="col-sm-2">
                         <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     </div>
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-9 explanation">
-                        <h5 class="explanationTitle">4. WHEN THE POMODORO RINGS, PUT A CHECKMARK ON A PAPER</h5>
-                        <p>Congraulations! You've spent an entire, interruption-less Pomodoro on a tast.</p>
+                    <div class="col-sm-9">
+                        <h5 class="title">4. WHEN THE POMODORO RINGS, PUT A CHECKMARK ON A PAPER</h5>
+                        <p class="content">Congraulations! You've spent an entire, interruption-less Pomodoro on a tast.</p>
                     </div>
                 </div>
-                <div class="explanationSection">
+                <div class="explanation">
                     <div class="col-sm-2">
                         <i class="fa fa-coffee" aria-hidden="true"></i>
                     </div>
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-9 explanation">
-                        <h5 class="explanationTitle">5. TAKE A SHORT BREAK</h5>
-                        <p>Breathe, mediate, grab a cup of coffee, go for a short walk or do something else relaxing(i.e., not work-related). Your brain will thank you later.</p>
+                    <div class="col-sm-9">
+                        <h5 class="title">5. TAKE A SHORT BREAK</h5>
+                        <p class="content">Breathe, mediate, grab a cup of coffee, go for a short walk or do something else relaxing(i.e., not work-related). Your brain will thank you later.</p>
                     </div>
                 </div>
-                <div class="explanationSection">
+                <div class="explanation">
                     <div class="col-sm-2">
                         <i class="fa fa-foursquare" aria-hidden="true"></i>
                     </div>
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-9 explanation">
-                        <h5 class="explanationTitle">6. EVERY 4 POMODOROS, TAKE A LONGER BREAK</h5>
-                        <p>Once you've completed four pomodoros, you can take a longer break. 20 minutes is good. Or 30. Your brain will use this time to assimilate new information and rest before the next round of Pomodoros.</p>
+                    <div class="col-sm-9">
+                        <h5 class="title">6. EVERY 4 POMODOROS, TAKE A LONGER BREAK</h5>
+                        <p class="content">Once you've completed four pomodoros, you can take a longer break. 20 minutes is good. Or 30. Your brain will use this time to assimilate new information and rest before the next round of Pomodoros.</p>
                     </div>
                 </div>
             </div>
@@ -291,7 +289,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
-                <h3 id="copyrightTitle" class="sectionTitle">CONTACT</h3>
+                <h3 id="title" class="sectionTitle">CONTACT</h3>
                 <div class="contactBox col-sm-12">
                     <a href="" target="_blank">
                         <div class="contact">
@@ -319,4 +317,10 @@
     </div>
 </div>
 </body>
+<script src="assets/js/index.js"></script>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 </html>

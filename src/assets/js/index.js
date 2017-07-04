@@ -2,12 +2,17 @@
 //   module.hot.accept()
 // }
 
+var handler = {
+    stop: true,
+    change: true
+};
+
+var ttime = [25, 0];
+
 $(document).ready(function() {
-    var timerHandle = true;
-    var changeTime = true;
-    var mainTime = [0, 1];
+    var mainTime = [30, 1];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
-    var tomatoBoxDate = $(".tomatoBoxDate");
+    var tomatoBoxDate = $(".tomatoList .date");
     var tomatoCase = $(".tomatoCase");
     var now = new Date();
     var name = 'tomato';
@@ -22,22 +27,9 @@ $(document).ready(function() {
         for(var i = 0; i < 10; i ++) {
             list.push(today + i + 't');
             localStorage.setItem(list[i], 2 + i);
-            console.log(list[i]);
         }
     }
     virTomato();
-
-    // function createDate() {
-    //     var today;
-    //     today = now.getDate();
-    //
-    //     for(var i = 0; i < 10; i ++) {
-    //         list.push(today + i + 't');
-    //         localStorage.setItem(list[i], i);
-    //         console.log(list[i]);
-    //     }
-    // }
-    // createDate();
 
     function loadTomato() {
         // TODO: save daily tomato
@@ -58,7 +50,6 @@ $(document).ready(function() {
     function makeTomato() {
         if(typeof(Storage) !== "undefined") {
             var now = new Date();
-            console.log("est");
             var date = (now.getMonth() + 1) + "/" + now.getDate() + "\n" + now.getHours() + " : " + now.getMinutes() + " : " + now.getSeconds();
             $("#case" + localStorage.count).html('<img src="assets/images/tomato.png" alt="" data-toggle="tooltip" data-placement="top" title="">');
             localStorage.setItem(localStorage.count, date);
@@ -75,12 +66,12 @@ $(document).ready(function() {
         var meter = $("#meter");
         var finishTime = (+new Date) + 1000 * (60 * setTime[0] + setTime[1]) + 200;
 
-        if(timerHandle === true) {
+        if(handler.stop === true) {
             button.text("STOP!");
-            timerHandle = !timerHandle;
+            handler.stop = !handler.stop;
         } else {
             button.text("START!");
-            timerHandle = !timerHandle;
+            handler.stop = !handler.stop;
         }
 
         function addZero(n) {
@@ -88,15 +79,15 @@ $(document).ready(function() {
         }
 
         function changeMode() {
-            if(changeTime === true) {
+            if(handler.change === true) {
                 makeTomato();
             }
-            changeTime = !changeTime;
-            timerHandle = !timerHandle;
-            mainTime = changeTime ? [0, 1] : [0, 1];
-            $("#tomato").css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
-            $("#mainTitle").css("color", changeTime ? "#df3c32" : "#3e4b5e");
-            button.css("background-color", changeTime ? "#df3c32" : "#3e4b5e");
+            handler.change = !handler.change;
+            handler.stop = !handler.stop;
+            mainTime = handler.change ? [0, 1] : [0, 1];
+            $("#tomato").css("background-color", handler.change ? "#df3c32" : "#3e4b5e");
+            $("#mainTitle").css("color", handler.change ? "#df3c32" : "#3e4b5e");
+            button.css("background-color", handler.change ? "#df3c32" : "#3e4b5e");
             mainProgress = 60 * mainTime[0] + mainTime[1];
         }
 
@@ -104,14 +95,14 @@ $(document).ready(function() {
             var min, sec, time;
             var nowTime = finishTime - (+new Date);
             if(nowTime < 1000) {
-                var message = changeTime ? "Pomodoro time over! \nTake a break time" : "Break time over! \nDo your work!";
+                var message = handler.change ? "Pomodoro time over! \nTake a break time" : "Break time over! \nDo your work!";
                 var check = alert(message);
                 meter.text("100%");
                 meter.css("width", "100%");
                 element.text("OVER!");
                 button.text("START!");
                 changeMode();
-            } else if(timerHandle === true) {
+            } else if(handler.stop === true) {
                 console.log("Click event exception");
             } else {
                 time = new Date(nowTime);
