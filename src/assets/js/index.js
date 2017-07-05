@@ -62,7 +62,7 @@ $(document).ready(function() {
     function timer(setTime) {
         var setProgress, ratio;
         var element = $("#time");
-        var button = $("#startButton");
+        var button = $("#button");
         var meter = $("#meter");
         var finishTime = (+new Date) + 1000 * (60 * setTime[0] + setTime[1]) + 200;
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
     }
     loadTomato();
 
-    $("#startButton").click(function() {
+    $("#button").click(function() {
         timer(mainTime);
     });
 });

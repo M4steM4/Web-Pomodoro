@@ -211,3 +211,12 @@ th {
 }
 
 /* Set style */
+
+.jumbotron {
+    margin-top: 50px;
+    background-color: #eeeeee;
+}
+
+.jumbotron * {
+    color: #df3c32;
+}

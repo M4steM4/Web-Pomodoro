@@ -1,22 +1,4 @@
-/* main page */
-#mainTitle {
-    margin-top: -1%;
-    color: #df3c32;
-    font-size: 70px;
-    font-weight: 400;
-}
-
-#subTitle {
-    margin: -60px 0 30px 0;
-    color: #333333;
-    font-size: 25px;
-    font-weight: 300;
-}
-
-#myNavbar > ul > li > a:hover {
-    color: #df3c32;
-}
-
+/* main tomato circle */
 #tomato {
     margin-left: calc(50% - 150px);
     height: 300px;
@@ -33,7 +15,7 @@
     border: 2px solid white;
     border-radius: 50%;
 }
-/* clock design */
+
 .clock {
     position: relative;
     background-color: white;
@@ -71,8 +53,8 @@
     font-size: 80px;
     font-weight: 100;
 }
-
-#start {
+/* clock button */
+#button {
     width: 300px;
     height: 60px;
     margin-top: 1%;
@@ -83,12 +65,7 @@
     font-weight: 300;
     letter-spacing: 5px;
 }
-
-#start:hover {
-    background-color: #df3c32;
-}
-
-
+/* progress bar */
 .progress {
     height: 30px;
     margin-top: 4%;
@@ -106,63 +83,7 @@
     transition-property: width, background-color;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
 }
-
-#copyright {
-    padding: 1% 8% 6% 8%;
-    background-color: #3e4b5e;
-    color: rgba(222, 222, 222, 0.9);
-    font-size: 40px;
-}
-
-#copyright #title {
-    margin-bottom: 50px;
-    text-align: center;
-    letter-spacing: 4px;
-}
-/* page sub class */
-.jumbotron {
-    margin-top: 50px;
-    background-color: #eeeeee;
-}
-
-.jumbotron > * {
-    color: #df3c32;
-}
-
-#guide {
-    margin-top: 10%;
-}
-
-.container-gray {
-    background-color: #eeeeee;
-}
-
-.sectionTitle {
-    margin-top: 40px;
-    font-size: 30px;
-    font-weight: 400;
-}
-
-.guideTitle {
-    margin: 100px 0 100px 20px;
-    font-size: 40px;
-    font-weight: 300;
-}
-
-.guideTitle img {
-    width: 50px;
-    height: 50px;
-    margin: 0px 20px 10px 30px;
-}
-
-#pomodoro {
-    color: #df3c32;
-    font-size: 45px;
-    font-weight: 500;
-    word-spacing: 15px;
-    letter-spacing: 2px;
-}
-
+/* tomato box */
 .store {
     height: 500px;
     overflow-x: hidden;
@@ -183,13 +104,20 @@
     margin: 2%;
 }
 
-.box > img {
+.store .title {
+    margin: 6px 0 0 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.box img {
     transition: transform 0.5s;
     width: 100px;
     height: 100px;
 }
 
-.box > img:hover {
+.box img:hover {
     transition: transform 0.5s;
     transform: scale(1.2);
 }
@@ -199,52 +127,10 @@
     border: 2px solid #e45;
 }
 
-.store .title {
-    margin: 6px 0 0 20px;
-    color: white;
-    font-size: 30px;
-    font-weight: 300;
-}
-
 .header-reverse {
     background-color:#e45;
 }
-
-header {
-    display: block;
-    position: absolute;
-    height: 15%;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    margin-bottom:10px;
-    background-color:#5DBA9D;
-    z-index: 10;
-}
-
-header > * {
-    display: inline-block;
-}
-
-header a {
-    position: absolute;
-    right: 0;
-    width:40px;
-    height:40px;
-    margin: 6px 20px 0 0 ;
-    color:#FFFFFF;
-    font-size:20px;
-    line-height:40px;
-}
-
-header a {
-    background-color:#11956c;
-}
-
-.header-reverse a {
-    background-color: #cd1830;
-}
-
+/* tomato module */
 #tomatoStore {
     margin-top: 20%;
     display: flex;
@@ -256,7 +142,7 @@ header a {
 #tomatoStore div {
     flex-basis: 100px;
 }
-/* tomato box */
+
 .tomatoBox {
     position: relative;
     float: left;
@@ -264,7 +150,7 @@ header a {
     margin-top: 14%;
 }
 
-.tomatoBox > ul > li  {
+.tomatoBox li  {
     z-index: 2;
     list-style: none;
     position: relative;
@@ -323,25 +209,24 @@ header a {
     padding: 0 10px 0 0 ;
 }
 
-.tomato > .tomatoCase {
+.tomato .tomatoCase {
     text-align: right;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 700;
 }
 
-.tomato > .tomatoCase > p {
+.tomato p {
     display: inline-block;
     text-align: left;
     margin-right: 20px;
 }
 
-.tomatoCase > img {
+.tomatoCase img {
     float: left;
     width: 20px;
     height: 20px;
 }
-
 /* Pomodoro guide */
 .explanation {
     height: 200px;
@@ -396,4 +281,26 @@ header a {
     margin-top: 20px;
     font-size: 50px;
     color: white;
+}
+
+/* copyright */
+#copyright {
+    padding: 1% 8% 6% 8%;
+    background-color: #3e4b5e;
+    color: rgba(222, 222, 222, 0.9);
+    font-size: 40px;
+}
+
+#copyright #title {
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+/* hover effect */
+#myNavbar a:hover {
+    color: #df3c32;
+}
+#button:hover {
+    background-color: #df3c32;
 }

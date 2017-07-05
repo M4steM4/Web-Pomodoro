@@ -1,0 +1,120 @@
+#mainTitle {
+    margin-top: -1%;
+    color: #df3c32;
+    font-size: 70px;
+    font-weight: 400;
+}
+
+#subTitle {
+    margin: -60px 0 30px 0;
+    color: #333333;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+#guide {
+    margin-top: 10%;
+}
+
+.guideTitle {
+    margin: 100px 0 100px 20px;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.guideTitle img {
+    width: 50px;
+    height: 50px;
+    margin: 0px 20px 10px 30px;
+}
+
+.container-gray {
+    background-color: #eeeeee;
+}
+
+.contactTitle {
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+#pomodoro {
+    color: #df3c32;
+    font-size: 45px;
+    font-weight: 500;
+    word-spacing: 15px;
+    letter-spacing: 2px;
+}
+/* header */
+header {
+    display: block;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    margin-bottom:10px;
+    background-color:#5DBA9D;
+    z-index: 10;
+}
+
+header > * {
+    display: inline-block;
+}
+
+header a {
+    position: absolute;
+    right: 0;
+    width:40px;
+    height:40px;
+    margin: 6px 20px 0 0 ;
+    color:#FFFFFF;
+    font-size:20px;
+    line-height:40px;
+}
+
+header a {
+    background-color:#11956c;
+}
+
+.header-reverse a {
+    background-color: #cd1830;
+}
+/* modal style */
+.modal-header {
+    background-color: #df3c32;
+    color: white;
+    font-size: 25px;
+    font-size: 400;
+    border-radius: 5px;
+}
+
+.modal-body label,
+.modal-body input {
+    display: block;
+    margin-left: 15px;
+}
+
+.modal-body label {
+    margin-top: 6%;
+    color: #df3c32;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.modal-body input {
+    margin-bottom: 15%;
+    width: 40%;
+    height: 20%;
+}
+
+.modal-body input:after {
+    width:30%;
+    content: 'Min';
+}
+
+.modal-footer button {
+    color: white;
+    background-color: #df3c32;
+}
