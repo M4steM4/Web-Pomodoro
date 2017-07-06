@@ -7,10 +7,8 @@ var handler = {
     change: true
 };
 
-var ttime = [25, 0];
-
 $(document).ready(function() {
-    var mainTime = [30, 1];
+    var mainTime = [25, 0];
     var mainProgress = 60 * mainTime[0] + mainTime[1];
     var tomatoBoxDate = $(".tomatoList .date");
     var tomatoCase = $(".tomatoCase");
@@ -45,6 +43,7 @@ $(document).ready(function() {
                 return string.repeat(count);
             });
         }
+        localTest();
     }
 
     function makeTomato() {
@@ -121,7 +120,24 @@ $(document).ready(function() {
     }
     loadTomato();
 
-    $("#button").click(function() {
-        timer(mainTime);
+    function localTest () {
+        let count = Number(localStorage.getItem('case'));
+        let list = [];
+
+        for (var i = 0; i < count; i++) {
+            list.push(`<div id="case${i+1}" class="box"></div>`);
+        }
+        $("#tomatoStore").html(list);
+    }
+
+
+    $("#button").click( () => timer(mainTime) );
+    $("#option").click( () => {
+        let test = $(".modal-body input");
+        let length = $(test[2]).val();
+        mainTime
+        localStorage.setItem('case', length);
+        localStorage.setItem('time', length);
+        localTest();
     });
 });
